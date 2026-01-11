@@ -8,7 +8,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-12 sm:py-16 md:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div
@@ -16,10 +16,10 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-8 sm:mb-10 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-4">
-            <span className="text-primary-500 font-mono text-xl md:text-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-3 sm:gap-4">
+            <span className="text-primary-500 font-mono text-lg sm:text-xl md:text-2xl">
               01.
             </span>
             Sobre Mim
@@ -27,14 +27,14 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-4 text-dark-300 text-base md:text-lg leading-relaxed"
+            className="lg:col-span-2 space-y-3 sm:space-y-4 text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed"
           >
             <p>
               Olá! Sou <strong className="text-dark-50">Kairo Henrique</strong>,
@@ -73,7 +73,7 @@ const About = () => {
           </motion.div>
 
           {/* Stats Cards */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -82,7 +82,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, x: 5 }}
-                className="relative bg-dark-900 border border-dark-800 rounded-lg p-6 overflow-hidden group cursor-default"
+                className="relative bg-dark-900 border border-dark-800 rounded-lg p-4 sm:p-5 md:p-6 overflow-hidden group cursor-default"
               >
                 {/* Animated background */}
                 <motion.div
@@ -97,18 +97,18 @@ const About = () => {
                     <motion.div
                       initial={{ scale: 1 }}
                       whileHover={{ scale: 1.1 }}
-                      className="text-2xl md:text-3xl font-bold gradient-text mb-2"
+                      className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1 sm:mb-2"
                     >
                       {stat.number}
                     </motion.div>
-                    <div className="text-dark-400 text-sm group-hover:text-dark-300 transition-colors">
+                    <div className="text-dark-400 text-xs sm:text-sm group-hover:text-dark-300 transition-colors">
                       {stat.label}
                     </div>
                   </div>
                   <motion.div
                     animate={{ rotate: [0, -10, 10, -10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    className="text-4xl opacity-20 group-hover:opacity-40 transition-opacity"
+                    className="text-3xl sm:text-4xl opacity-20 group-hover:opacity-40 transition-opacity"
                   >
                     {stat.icon}
                   </motion.div>

@@ -64,9 +64,9 @@ const Hero = () => {
             </motion.h2>
             <motion.p
               variants={itemVariants}
-              className="text-dark-300 text-lg md:text-xl max-w-2xl leading-relaxed"
+              className="text-dark-300 text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed"
             >
-              Estudante de Análise e Desenvolvimento de Sistemas (4/5 semestres).
+              Estudante de Análise e Desenvolvimento de Sistemas (5/5 semestres).
               <br />
               <span className="text-primary-400 font-semibold">
                 Do código ao servidor
@@ -75,16 +75,16 @@ const Hero = () => {
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 sm:gap-4 pt-4">
               <a
                 href="#projects"
-                className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50 hover:scale-105"
+                className="px-6 py-2.5 sm:px-8 sm:py-3 bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50 hover:scale-105"
               >
                 Ver Projetos
               </a>
               <a
                 href="#contact"
-                className="px-8 py-3 border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white font-medium rounded-lg transition-all duration-300"
+                className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300"
               >
                 Entrar em Contato
               </a>

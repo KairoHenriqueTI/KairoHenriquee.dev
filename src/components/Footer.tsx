@@ -31,12 +31,12 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-dark-900 border-t border-dark-800 py-8 px-4">
+    <footer className="bg-dark-900 border-t border-dark-800 py-6 sm:py-8 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <div>
-            <a href="#home" className="flex items-center space-x-2 text-xl font-bold font-mono group mb-4">
+            <a href="#home" className="flex items-center space-x-2 text-lg sm:text-xl font-bold font-mono group mb-3 sm:mb-4">
               <span className="text-primary-500 group-hover:text-primary-400 transition-colors">
                 &lt;
               </span>
@@ -47,7 +47,7 @@ const Footer = () => {
                 /&gt;
               </span>
             </a>
-            <p className="text-dark-400 text-sm">
+            <p className="text-dark-400 text-xs sm:text-sm">
               Full Stack Developer em formação.
               <br />
               Do código ao servidor.
@@ -56,13 +56,13 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-dark-50 font-semibold mb-4">Navegação</h3>
-            <ul className="space-y-2">
+            <h3 className="text-dark-50 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Navegação</h3>
+            <ul className="space-y-1.5 sm:space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-dark-400 hover:text-primary-400 transition-colors text-sm"
+                    className="text-dark-400 hover:text-primary-400 transition-colors text-xs sm:text-sm"
                   >
                     {link.label}
                   </a>
@@ -73,8 +73,8 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h3 className="text-dark-50 font-semibold mb-4">Social</h3>
-            <div className="flex gap-4">
+            <h3 className="text-dark-50 font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Social</h3>
+            <div className="flex gap-3 sm:gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -92,8 +92,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-dark-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-dark-400 text-sm">
+        <div className="pt-6 sm:pt-8 border-t border-dark-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-dark-400 text-xs sm:text-sm text-center md:text-left">
             <p>
               &copy; {currentYear} Kairo Henrique. Todos os direitos reservados.
             </p>

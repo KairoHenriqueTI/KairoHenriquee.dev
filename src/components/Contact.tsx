@@ -25,12 +25,12 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 bg-dark-900/50">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 bg-dark-900/50">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-4">
-            <span className="text-primary-500 font-mono text-xl md:text-2xl">
+        <div className="mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-3 sm:gap-4">
+            <span className="text-primary-500 font-mono text-lg sm:text-xl md:text-2xl">
               04.
             </span>
             Entre em Contato
@@ -38,24 +38,24 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-dark-50">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-dark-50">
               Vamos trabalhar juntos?
             </h3>
-            <p className="text-dark-300 text-lg leading-relaxed">
+            <p className="text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed">
               Estou sempre aberto a discutir novos projetos, ideias criativas ou
               oportunidades de fazer parte da sua visão. Seja para colaborar em
               projetos open source, oportunidades de trabalho ou apenas trocar
               uma ideia sobre tecnologia.
             </p>
 
-            <div className="space-y-4 pt-4">
-              <div className="flex items-center gap-4 text-dark-300">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
+            <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
+              <div className="flex items-center gap-3 sm:gap-4 text-dark-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
                   <svg
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -75,15 +75,15 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-dark-50">Localização</p>
-                  <p className="text-sm">Santa Catarina, Brasil 🇧🇷</p>
+                  <p className="font-semibold text-dark-50 text-sm sm:text-base">Localização</p>
+                  <p className="text-xs sm:text-sm">Santa Catarina, Brasil 🇧🇷</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-dark-300">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
+              <div className="flex items-center gap-3 sm:gap-4 text-dark-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
                   <svg
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -97,20 +97,20 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-dark-50">Email</p>
+                  <p className="font-semibold text-dark-50 text-sm sm:text-base">Email</p>
                   <a
                     href="mailto:kairo@example.com"
-                    className="text-sm hover:text-primary-400 transition-colors"
+                    className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
                   >
                     kairo@example.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-dark-300">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
+              <div className="flex items-center gap-3 sm:gap-4 text-dark-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-dark-800 text-primary-500">
                   <svg
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -118,12 +118,12 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-dark-50">GitHub</p>
+                  <p className="font-semibold text-dark-50 text-sm sm:text-base">GitHub</p>
                   <a
                     href="https://github.com/Noclipssz"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm hover:text-primary-400 transition-colors"
+                    className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
                   >
                     @Noclipssz
                   </a>
@@ -135,12 +135,12 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 bg-dark-900 border border-dark-800 rounded-lg p-8"
+            className="space-y-4 sm:space-y-6 bg-dark-900 border border-dark-800 rounded-lg p-5 sm:p-6 md:p-8"
           >
             <div>
               <label
                 htmlFor="name"
-                className="block text-dark-50 font-medium mb-2"
+                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
               >
                 Nome
               </label>
@@ -151,7 +151,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
                 placeholder="Seu nome"
               />
             </div>
@@ -159,7 +159,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-dark-50 font-medium mb-2"
+                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
               >
                 Email
               </label>
@@ -170,7 +170,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
                 placeholder="seu@email.com"
               />
             </div>
@@ -178,7 +178,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-dark-50 font-medium mb-2"
+                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
               >
                 Assunto
               </label>
@@ -189,7 +189,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
                 placeholder="Como posso ajudar?"
               />
             </div>
@@ -197,7 +197,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-dark-50 font-medium mb-2"
+                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
               >
                 Mensagem
               </label>
@@ -208,18 +208,18 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
                 placeholder="Sua mensagem..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50"
+              className="w-full flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50"
             >
               Enviar Mensagem
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

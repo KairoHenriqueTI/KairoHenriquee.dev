@@ -158,7 +158,7 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="py-20 px-4 bg-dark-900/50">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 bg-dark-900/50">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div
@@ -166,19 +166,19 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-4">
-            <span className="text-primary-500 font-mono text-xl md:text-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-50 flex items-center gap-3 sm:gap-4">
+            <span className="text-primary-500 font-mono text-lg sm:text-xl md:text-2xl">
               02.
             </span>
-            Tecnologias & Ferramentas
+            <span className="text-xl sm:text-3xl md:text-4xl">Tecnologias & Ferramentas</span>
             <div className="hidden md:block h-px flex-1 bg-dark-800 ml-4"></div>
           </h2>
         </motion.div>
 
         {/* Categories */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-10 md:space-y-12">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -188,17 +188,17 @@ const Skills = () => {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             >
               {/* Category Header */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <motion.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
-                  className={`p-3 rounded-xl bg-gradient-to-br ${skillColors[categoryIndex]} text-white shadow-lg`}
+                  className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${skillColors[categoryIndex]} text-white shadow-lg`}
                 >
-                  <div className="w-7 h-7">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7">
                     {category.icon}
                   </div>
                 </motion.div>
-                <h3 className="text-2xl font-bold text-dark-50">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-dark-50">
                   {category.title}
                 </h3>
                 <div className="h-px flex-1 bg-dark-800"></div>
@@ -210,7 +210,7 @@ const Skills = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4"
               >
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
@@ -219,7 +219,7 @@ const Skills = () => {
                     onHoverStart={() => setHoveredSkill(skill)}
                     onHoverEnd={() => setHoveredSkill(null)}
                     whileHover={{ scale: 1.05, y: -8 }}
-                    className="relative bg-dark-900 border border-dark-800 rounded-xl p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-4 aspect-square"
+                    className="relative bg-dark-900 border border-dark-800 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-3 sm:gap-4 aspect-square"
                   >
                     {/* Gradient background on hover */}
                     <motion.div
@@ -248,7 +248,7 @@ const Skills = () => {
                           scale: hoveredSkill === skill ? 1.2 : 1,
                         }}
                         transition={{ duration: 0.5 }}
-                        className="relative z-10 w-16 h-16 flex items-center justify-center text-primary-400 group-hover:text-primary-300"
+                        className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-primary-400 group-hover:text-primary-300"
                       >
                         <div className="w-full h-full">
                           {skillIcons[skill]}
@@ -258,7 +258,7 @@ const Skills = () => {
 
                     {/* Skill Name */}
                     <motion.p
-                      className="relative z-10 text-sm font-semibold text-dark-50 text-center group-hover:text-white transition-colors"
+                      className="relative z-10 text-xs sm:text-sm font-semibold text-dark-50 text-center group-hover:text-white transition-colors"
                     >
                       {skill}
                     </motion.p>
