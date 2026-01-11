@@ -13,11 +13,22 @@ import {
   MySQLIcon,
   TailwindIcon,
   GitIcon,
-  AWSIcon
+  AWSIcon,
+  HTML5Icon,
+  CSS3Icon,
+  BootstrapIcon,
+  LinuxIcon,
+  FigmaIcon,
+  VSCodeIcon,
+  PostmanIcon,
+  SwaggerIcon,
+  IntelliJIcon,
+  JiraIcon,
+  TrelloIcon,
+  CICDIcon
 } from './TechIcons'
 
 const Skills = () => {
-  const [hoveredCategory, setHoveredCategory] = useState<number | null>(null)
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   const skillIcons: Record<string, JSX.Element> = {
@@ -25,6 +36,10 @@ const Skills = () => {
     'Vue.js': <VueIcon className="w-full h-full" />,
     'JavaScript': <JavaScriptIcon className="w-full h-full" />,
     'TypeScript': <TypeScriptIcon className="w-full h-full" />,
+    'HTML5': <HTML5Icon className="w-full h-full" />,
+    'CSS3': <CSS3Icon className="w-full h-full" />,
+    'Tailwind CSS': <TailwindIcon className="w-full h-full" />,
+    'Bootstrap': <BootstrapIcon className="w-full h-full" />,
     'Java': <JavaIcon className="w-full h-full" />,
     'Spring Boot': <JavaIcon className="w-full h-full" />,
     'Python': <PythonIcon className="w-full h-full" />,
@@ -35,10 +50,19 @@ const Skills = () => {
     'MySQL': <MySQLIcon className="w-full h-full" />,
     'PostgreSQL': <MySQLIcon className="w-full h-full" />,
     'MongoDB': <MySQLIcon className="w-full h-full" />,
-    'Tailwind CSS': <TailwindIcon className="w-full h-full" />,
     'Git': <GitIcon className="w-full h-full" />,
     'GitHub': <GitIcon className="w-full h-full" />,
     'AWS': <AWSIcon className="w-full h-full" />,
+    'Linux': <LinuxIcon className="w-full h-full" />,
+    'Ubuntu': <LinuxIcon className="w-full h-full" />,
+    'VS Code': <VSCodeIcon className="w-full h-full" />,
+    'IntelliJ IDEA': <IntelliJIcon className="w-full h-full" />,
+    'Postman': <PostmanIcon className="w-full h-full" />,
+    'Swagger': <SwaggerIcon className="w-full h-full" />,
+    'Figma': <FigmaIcon className="w-full h-full" />,
+    'Jira': <JiraIcon className="w-full h-full" />,
+    'Trello': <TrelloIcon className="w-full h-full" />,
+    'CI/CD': <CICDIcon className="w-full h-full" />,
   }
 
   const skillCategories = [
