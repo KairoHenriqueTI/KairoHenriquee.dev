@@ -1,51 +1,139 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
+const ProjectPreview = ({ type }: { type: string }) => {
+  const windowHeader = (
+    <div className="flex gap-1.5 mb-3">
+      <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+      <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+    </div>
+  )
+
+  if (type === 'grid') {
+    return (
+      <div className="w-full h-full bg-dark-900 border border-dark-700 rounded-lg p-4 select-none overflow-hidden">
+        {windowHeader}
+        <div className="flex gap-3 h-full">
+          {/* Sidebar */}
+          <div className="w-1/4 h-32 bg-dark-800/50 rounded flex flex-col gap-2 p-2">
+            <div className="w-full h-2 bg-dark-700 rounded-full"></div>
+            <div className="w-2/3 h-2 bg-dark-700 rounded-full"></div>
+            <div className="w-3/4 h-2 bg-dark-700 rounded-full"></div>
+          </div>
+          {/* Main Grid */}
+          <div className="flex-1 grid grid-cols-3 grid-rows-3 gap-2">
+            {[...Array(9)].map((_, i) => (
+              <div
+                key={i}
+                className={`rounded ${
+                  i % 2 === 0 ? 'bg-primary-500/10' : 'bg-dark-800/50'
+                }`}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'chart') {
+    return (
+      <div className="w-full h-full bg-dark-900 border border-dark-700 rounded-lg p-4 select-none overflow-hidden">
+        {windowHeader}
+        <div className="flex flex-col h-full gap-3">
+          <div className="flex justify-between items-end h-20 gap-2 px-2">
+            {[40, 70, 45, 90, 60, 80, 50].map((h, i) => (
+              <div
+                key={i}
+                className="w-full bg-primary-500/20 hover:bg-primary-500/40 transition-colors rounded-t"
+                style={{ height: `${h}%` }}
+              ></div>
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <div className="h-2 w-full bg-dark-800 rounded-full"></div>
+            <div className="h-2 w-2/3 bg-dark-800 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'terminal') {
+    return (
+      <div className="w-full h-full bg-dark-950 border border-dark-800 rounded-lg p-4 font-mono text-xs select-none overflow-hidden">
+        {windowHeader}
+        <div className="space-y-2 text-dark-300">
+          <div className="flex gap-2">
+             <span className="text-green-500">➜</span>
+             <span className="text-blue-400">~/gym-backend</span>
+             <span className="text-dark-400">git status</span>
+          </div>
+          <div className="text-dark-400 pl-4">On branch main</div>
+          <div className="flex gap-2">
+             <span className="text-green-500">➜</span>
+             <span className="text-blue-400">~/gym-backend</span>
+             <span className="text-dark-400">docker-compose up -d</span>
+          </div>
+           <div className="text-dark-500 pl-4">
+             <div className="animate-pulse">[+] Running 3/3</div>
+             <div> ⠿ Container db      Started</div>
+             <div> ⠿ Container api     Started</div>
+             <div> ⠿ Container redis   Started</div>
+           </div>
+        </div>
+      </div>
+    )
+  }
+
+  return null
+}
+
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const projects = [
     {
-      title: 'Sistema de Gerenciamento',
+      title: 'GridFlow',
       description:
-        'Sistema completo de gerenciamento com autenticação, CRUD de usuários e painel administrativo. Desenvolvido com arquitetura REST e práticas de Clean Code.',
-      image: '🚀',
+        'Meu projeto piloto. Um sistema web robusto para escolas que automatiza a geração e gestão de grades de horários, garantindo eficiência no planejamento acadêmico.',
+      type: 'grid',
+      tech: [
+        { name: 'Laravel', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+        { name: 'PHP', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
+        { name: 'Blade', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+        { name: 'Docker', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+      ],
+      github: 'https://github.com/Noclipssz/GridFlow--',
+      demo: null,
+    },
+    {
+      title: 'FinanceTracker Pro',
+      description:
+        'Controle completo de finanças pessoais com dashboard interativo, gráficos de despesas vs. receitas e persistência local de dados. Interface moderna e responsiva.',
+      type: 'chart',
+      tech: [
+        { name: 'JavaScript', color: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' },
+        { name: 'Chart.js', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
+        { name: 'HTML5/CSS3', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+        { name: 'LocalStorage', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
+      ],
+      github: 'https://github.com/Noclipssz/Controle-de-Finan-as-Pessoais-despesas-receitas-',
+      demo: null,
+    },
+    {
+      title: 'Gym System Backend',
+      description:
+        'API robusta para gerenciamento de academias baseada em arquitetura de microsserviços. Implementada com containers Docker e documentada com BFF.',
+      type: 'terminal',
       tech: [
         { name: 'Java', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
         { name: 'Spring Boot', color: 'bg-green-500/20 text-green-400 border-green-500/30' },
-        { name: 'React', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-        { name: 'MySQL', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-        { name: 'Docker', color: 'bg-sky-500/20 text-sky-400 border-sky-500/30' },
-      ],
-      github: 'https://github.com/Noclipssz',
-      demo: null,
-    },
-    {
-      title: 'API RESTful',
-      description:
-        'API RESTful robusta com documentação Swagger, testes automatizados e deploy em container Docker. Implementa boas práticas de segurança e versionamento.',
-      image: '⚡',
-      tech: [
-        { name: 'Python', color: 'bg-blue-600/20 text-blue-400 border-blue-600/30' },
-        { name: 'Docker', color: 'bg-sky-500/20 text-sky-400 border-sky-500/30' },
+        { name: 'Docker', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
         { name: 'PostgreSQL', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
-        { name: 'AWS', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
       ],
-      github: 'https://github.com/Noclipssz',
-      demo: null,
-    },
-    {
-      title: 'Dashboard Interativo',
-      description:
-        'Dashboard moderno e responsivo com gráficos interativos, filtros avançados e atualização em tempo real. Interface intuitiva construída com foco na experiência do usuário.',
-      image: '🎨',
-      tech: [
-        { name: 'Vue.js', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
-        { name: 'Laravel', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
-        { name: 'Tailwind', color: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-        { name: 'MySQL', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
-      ],
-      github: 'https://github.com/Noclipssz',
+      github: 'https://github.com/Noclipssz/fictional-system-back-end-gym',
       demo: null,
     },
   ]
@@ -106,7 +194,7 @@ const Projects = () => {
               whileHover={{ y: -10 }}
               onHoverStart={() => setHoveredProject(index)}
               onHoverEnd={() => setHoveredProject(null)}
-              className="relative bg-dark-900 border border-dark-800 rounded-lg overflow-hidden group"
+              className="relative bg-dark-900 border border-dark-800 rounded-lg overflow-hidden group hover:border-primary-500/50 hover:shadow-[0_0_30px_-5px_rgba(14,165,233,0.15)] transition-all duration-300"
             >
               {/* Gradient overlay on hover */}
               <motion.div
@@ -117,26 +205,11 @@ const Projects = () => {
               />
 
               {/* Project Image */}
-              <div className="relative h-48 bg-dark-800 flex items-center justify-center overflow-hidden">
-                <motion.div
-                  animate={{
-                    scale: hoveredProject === index ? 1.1 : 1,
-                    rotate: hoveredProject === index ? [0, -5, 5, 0] : 0,
-                  }}
-                  transition={{ duration: 0.5 }}
-                  className="text-6xl"
-                >
-                  {project.image}
-                </motion.div>
-
-                {/* Animated circles background */}
-                <motion.div
-                  animate={{
-                    scale: hoveredProject === index ? 1.2 : 0.8,
-                    opacity: hoveredProject === index ? 0.2 : 0,
-                  }}
-                  className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full blur-2xl"
-                />
+              <div className="relative h-48 bg-dark-800 flex items-center justify-center overflow-hidden p-6">
+                 {/* Visual Preview */}
+                 <div className="w-full h-full transform transition-transform duration-500 hover:scale-105">
+                   <ProjectPreview type={project.type} />
+                 </div>
               </div>
 
               {/* Project Content */}

@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion'
 
 const About = () => {
-  const stats = [
-    { number: '5/5', label: 'Semestres ADS', icon: '🎓' },
-    { number: '25+', label: 'Repositórios', icon: '📦' },
-    { number: 'Full Stack', label: 'Desenvolvedor', icon: '💻' },
-  ]
-
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -27,14 +21,14 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+        <div>
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-3 sm:space-y-4 text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed"
+            className="space-y-3 sm:space-y-4 text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed"
           >
             <p>
               Olá! Sou <strong className="text-dark-50">Kairo Henrique</strong>,
@@ -49,7 +43,7 @@ const About = () => {
             <p>
               Minha jornada na tecnologia começou com a curiosidade de entender
               como as coisas funcionam nos bastidores. Hoje, trabalho com
-              desenvolvimento completo, desde a interface do usuário até a
+              desenvolvimento, desde a interface do usuário até a
               infraestrutura e automação de servidores.
             </p>
             <p>
@@ -63,68 +57,84 @@ const About = () => {
               para criar sistemas robustos e escaláveis.
             </p>
             <p>
-              Baseado em{' '}
+              Nascido em{' '}
               <strong className="text-dark-50">
                 Santa Catarina, Brasil 🇧🇷
               </strong>
               , estou sempre em busca de novos desafios e oportunidades de
               aprendizado.
             </p>
-          </motion.div>
 
-          {/* Stats Cards */}
-          <div className="space-y-3 sm:space-y-4">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, x: 5 }}
-                className="relative bg-dark-900 border border-dark-800 rounded-lg p-4 sm:p-5 md:p-6 overflow-hidden group cursor-default"
-              >
-                {/* Animated background */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileHover={{ opacity: 0.1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700"
-                />
-
-                <div className="relative z-10 flex items-center justify-between">
-                  <div>
-                    <motion.div
-                      initial={{ scale: 1 }}
-                      whileHover={{ scale: 1.1 }}
-                      className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text mb-1 sm:mb-2"
-                    >
-                      {stat.number}
-                    </motion.div>
-                    <div className="text-dark-400 text-xs sm:text-sm group-hover:text-dark-300 transition-colors">
-                      {stat.label}
-                    </div>
+            {/* Diferenciais */}
+            <div className="mt-12 grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-dark-50 flex items-center gap-2">
+                  <span className="text-primary-500">🚀</span> Jornada & Educação
+                </h3>
+                <div className="relative border-l-2 border-dark-800 ml-3 space-y-8 pl-6">
+                  <div className="relative">
+                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary-500 border-4 border-dark-950"></span>
+                     <h4 className="text-dark-50 font-bold">Auxiliar de Programador</h4>
+                     <p className="text-primary-400 text-sm">SBN Telecomunicações | Jul 2025 - Presente</p>
+                     <p className="text-dark-400 text-sm mt-1">
+                       Desenvolvimento e manutenção de software, automação de processos técnicos e suporte especializado. Promovido de Assistente de Processos Técnicos.
+                     </p>
                   </div>
-                  <motion.div
-                    animate={{ rotate: [0, -10, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    className="text-3xl sm:text-4xl opacity-20 group-hover:opacity-40 transition-opacity"
-                  >
-                    {stat.icon}
-                  </motion.div>
-                </div>
 
-                {/* Progress bar animation */}
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-primary-700 origin-left"
-                />
-              </motion.div>
-            ))}
-          </div>
+                  <div className="relative">
+                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
+                     <h4 className="text-dark-50 font-bold">Análise e Desenvolvimento de Sistemas</h4>
+                     <p className="text-primary-400 text-sm">Senac Blumenau - Presencial | 2024 - Presente</p>
+                     <p className="text-dark-400 text-sm mt-1">Foco em Engenharia de Software e Arquitetura de Sistemas.</p>
+                  </div>
+                  
+                  <div className="relative">
+                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
+                     <h4 className="text-dark-50 font-bold">Estágio em TI & Infraestrutura</h4>
+                     <p className="text-primary-400 text-sm">Prefeitura de Guabiruba | 2024</p>
+                     <p className="text-dark-400 text-sm mt-1">
+                       Suporte técnico, manutenção de redes/infraestrutura e configuração de servidores locais.
+                     </p>
+                  </div>
+
+                  <div className="relative">
+                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
+                     <h4 className="text-dark-50 font-bold">Desenvolvedor Web (Estudos)</h4>
+                     <p className="text-primary-400 text-sm">Udemy & Autodidata | 2023 - 2026</p>
+                     <p className="text-dark-400 text-sm mt-1">
+                       +300h em cursos de Java, Banco de Dados (MySQL) e Full Stack (JS/TS).
+                     </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-dark-50 flex items-center gap-2">
+                  <span className="text-primary-500">🔧</span> Stack Principal
+                </h3>
+                <div className="space-y-4">
+                   <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
+                      <h4 className="text-primary-400 font-bold mb-2">Back-end & DevOps</h4>
+                      <p className="text-sm text-dark-300">
+                        Java (Spring Boot), PHP (Laravel), Docker, AWS, Linux, Redes.
+                      </p>
+                   </div>
+                   <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
+                      <h4 className="text-primary-400 font-bold mb-2">Front-end</h4>
+                      <p className="text-sm text-dark-300">
+                        React, TypeScript, Tailwind CSS, Blade Templates.
+                      </p>
+                   </div>
+                   <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
+                      <h4 className="text-primary-400 font-bold mb-2">Metodologias</h4>
+                      <p className="text-sm text-dark-300">
+                        Clean Code, MVC, SOLID, TDD, Scrum/Kanban.
+                      </p>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

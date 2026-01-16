@@ -3,10 +3,16 @@ import { useState, useEffect } from 'react'
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+      
+      const totalScroll = document.documentElement.scrollTop
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const scroll = `${totalScroll / windowHeight}`
+      setScrollProgress(Number(scroll))
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -111,6 +117,14 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+      </div>
+
+      {/* Scroll Progress Bar */}
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-dark-800/20">
+        <div 
+          className="h-full bg-gradient-to-r from-primary-600 to-primary-400 transition-all duration-150 ease-out"
+          style={{ width: `${scrollProgress * 100}%` }}
+        />
       </div>
     </nav>
   )

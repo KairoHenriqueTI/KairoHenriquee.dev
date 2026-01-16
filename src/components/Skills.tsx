@@ -25,7 +25,12 @@ import {
   IntelliJIcon,
   JiraIcon,
   TrelloIcon,
-  CICDIcon
+  CICDIcon,
+  ChatGPTIcon,
+  OpenAIIcon,
+  AnthropicIcon,
+  MCPIcon
+  , CodexIcon, ClaudeIcon, CodeIcon, ManusIcon
 } from './TechIcons'
 
 const Skills = () => {
@@ -63,6 +68,17 @@ const Skills = () => {
     'Jira': <JiraIcon className="w-full h-full" />,
     'Trello': <TrelloIcon className="w-full h-full" />,
     'CI/CD': <CICDIcon className="w-full h-full" />,
+    'ChatGPT': <ChatGPTIcon className="w-full h-full" />,
+    'GPT-4': <ChatGPTIcon className="w-full h-full" />,
+    'OpenAI': <OpenAIIcon className="w-full h-full" />,
+    'Anthropic': <AnthropicIcon className="w-full h-full" />,
+    'MCP': <MCPIcon className="w-full h-full" />,
+    'Codex': <CodexIcon className="w-full h-full" />,
+    'Claude': <ClaudeIcon className="w-full h-full" />,
+    'Claude Code': <CodeIcon className="w-full h-full" />,
+    'Code': <CodeIcon className="w-full h-full" />,
+    'Manus': <ManusIcon className="w-full h-full" />,
+    'Codex CLI': <CodexIcon className="w-full h-full" />,
   }
 
   const skillCategories = [
@@ -97,7 +113,7 @@ const Skills = () => {
           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" strokeWidth="2" />
         </svg>
       ),
-      skills: ['MySQL', 'PostgreSQL', 'MongoDB'],
+      skills: ['MySQL'],
     },
     {
       title: 'DevOps & Cloud',
@@ -125,6 +141,15 @@ const Skills = () => {
         </svg>
       ),
       skills: ['VS Code', 'IntelliJ IDEA', 'Postman', 'Swagger', 'Figma', 'Jira', 'Trello'],
+    },
+    {
+      title: 'IA',
+      icon: (
+        <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a7 7 0 00-7 7v3a7 7 0 0014 0V9a7 7 0 00-7-7zm1 14h-2v2h2v-2zm1-7h-4V7h4v2z" />
+        </svg>
+      ),
+      skills: ['Manus', 'Claude Code', 'Codex CLI', 'MCP'],
     },
   ]
 
@@ -210,7 +235,7 @@ const Skills = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6"
               >
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
@@ -219,7 +244,7 @@ const Skills = () => {
                     onHoverStart={() => setHoveredSkill(skill)}
                     onHoverEnd={() => setHoveredSkill(null)}
                     whileHover={{ scale: 1.05, y: -8 }}
-                    className="relative bg-dark-900 border border-dark-800 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-3 sm:gap-4 aspect-square"
+                    className="relative bg-dark-900 border border-dark-800 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-[110px] sm:min-h-[130px]"
                   >
                     {/* Gradient background on hover */}
                     <motion.div
@@ -248,7 +273,7 @@ const Skills = () => {
                           scale: hoveredSkill === skill ? 1.2 : 1,
                         }}
                         transition={{ duration: 0.5 }}
-                        className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center text-primary-400 group-hover:text-primary-300"
+                        className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center text-primary-400 group-hover:text-primary-300"
                       >
                         <div className="w-full h-full">
                           {skillIcons[skill]}
@@ -269,22 +294,21 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Floating particles background */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-          {[...Array(20)].map((_, i) => (
+        {/* Floating particles background - Optimized */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 hidden sm:block">
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-primary-500/30 rounded-full"
+              className="absolute w-1 h-1 bg-primary-500/20 rounded-full"
               initial={{
-                x: Math.random() * window.innerWidth,
+                x: Math.random() * 1000,
                 y: Math.random() * 800,
               }}
               animate={{
                 y: [null, Math.random() * 800],
-                opacity: [0.3, 0.6, 0.3],
               }}
               transition={{
-                duration: Math.random() * 10 + 5,
+                duration: Math.random() * 20 + 20, // Slower duration = less CPU
                 repeat: Infinity,
                 ease: "linear",
               }}

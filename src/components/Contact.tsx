@@ -1,27 +1,12 @@
-import { useState, FormEvent } from 'react'
+import React from 'react'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
+  const [copied, setCopied] = React.useState(false)
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData)
-    alert('Mensagem enviada! (Funcionalidade em desenvolvimento)')
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('kairo.h.seidler@gmail.com')
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000) // Reset após 2s
   }
 
   return (
@@ -38,7 +23,7 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+        <div className="grid gap-8 sm:gap-10 md:gap-12">
           {/* Contact Info */}
           <div className="space-y-4 sm:space-y-6">
             <h3 className="text-xl sm:text-2xl font-bold text-dark-50">
@@ -98,12 +83,30 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-dark-50 text-sm sm:text-base">Email</p>
-                  <a
-                    href="mailto:kairo@example.com"
-                    className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
-                  >
-                    kairo@example.com
-                  </a>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="mailto:kairo.h.seidler@gmail.com"
+                      className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
+                    >
+                      kairo.h.seidler@gmail.com
+                    </a>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="p-1 rounded hover:bg-dark-800 transition-colors text-dark-400 hover:text-primary-400"
+                      title="Copiar email"
+                    >
+                      {copied ? (
+                        <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                      )}
+                    </button>
+                    {copied && <span className="text-xs text-green-500 animate-fade-in">Copiado!</span>}
+                  </div>
                 </div>
               </div>
 
@@ -132,107 +135,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 sm:space-y-6 bg-dark-900 border border-dark-800 rounded-lg p-5 sm:p-6 md:p-8"
-          >
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
-              >
-                Nome
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
-                placeholder="Seu nome"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
-                placeholder="seu@email.com"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
-              >
-                Assunto
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors"
-                placeholder="Como posso ajudar?"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-dark-50 font-medium mb-2 text-sm sm:text-base"
-              >
-                Mensagem
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-dark-800 border border-dark-700 rounded-lg text-dark-50 text-sm sm:text-base placeholder-dark-400 focus:outline-none focus:border-primary-500 transition-colors resize-none"
-                placeholder="Sua mensagem..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50"
-            >
-              Enviar Mensagem
-              <svg
-                className="w-4 h-4 sm:w-5 sm:h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                />
-              </svg>
-            </button>
-          </form>
+          {/* formulário removido — apenas informações de contato permanecem */}
         </div>
       </div>
     </section>

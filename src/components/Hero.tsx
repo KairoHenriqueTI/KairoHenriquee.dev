@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ReactIcon, NodeIcon, DockerIcon, AWSIcon } from './TechIcons'
 
 const Hero = () => {
   const containerVariants = {
@@ -22,16 +23,14 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center px-4 pt-20 overflow-hidden"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div 
+          className="absolute top-[-10%] left-[-10%] w-[30rem] h-[30rem] sm:w-[40rem] sm:h-[40rem] bg-primary-500/10 rounded-full blur-[80px] animate-pulse-slow"
+          style={{ willChange: 'transform, opacity' }}
         />
-        <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-700/10 rounded-full blur-3xl"
+        <div 
+          className="absolute bottom-[-10%] right-[-10%] w-[25rem] h-[25rem] sm:w-[35rem] sm:h-[35rem] bg-indigo-500/10 rounded-full blur-[80px] animate-pulse-slow"
+          style={{ willChange: 'transform, opacity', animationDelay: '1s' }}
         />
       </div>
 
@@ -46,32 +45,39 @@ const Hero = () => {
           >
             <motion.p
               variants={itemVariants}
-              className="text-primary-500 font-mono text-sm md:text-base"
+              className="text-primary-500 font-mono text-sm md:text-base tracking-wide"
             >
               Olá, eu sou
             </motion.p>
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-dark-50"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-dark-50 tracking-tight"
             >
               Kairo Henrique
             </motion.h1>
-            <motion.h2
-              variants={itemVariants}
-              className="text-3xl md:text-5xl lg:text-6xl font-bold"
-            >
-              <span className="gradient-text">Full Stack Developer</span>
-            </motion.h2>
+            <motion.div variants={itemVariants} className="relative inline-block">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold relative z-10">
+                <span className="gradient-text bg-[length:200%_auto] animate-shimmer">
+                  Full Stack Developer
+                </span>
+              </h2>
+              <motion.div
+                initial={{ width: "100%" }}
+                animate={{ width: "0%" }}
+                transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+                className="absolute inset-0 bg-dark-950 z-20"
+              />
+            </motion.div>
             <motion.p
               variants={itemVariants}
               className="text-dark-300 text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed"
             >
-              Estudante de Análise e Desenvolvimento de Sistemas (5/5 semestres).
-              <br />
-              <span className="text-primary-400 font-semibold">
-                Do código ao servidor
-              </span>{' '}
-              - especializado em código limpo, infraestrutura e automação.
+              <span className="text-2xl font-bold text-dark-50 block mb-2">
+                "Do código ao servidor"
+              </span>
+              Especialista em construir soluções completas, unindo{' '}
+              <strong className="text-primary-400">Desenvolvimento de Software</strong>{' '}
+              e <strong className="text-primary-400">Infraestrutura</strong>.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -122,19 +128,50 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="hidden lg:flex items-center justify-center"
+            className="hidden lg:flex items-center justify-center relative"
           >
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary-600 to-primary-900 opacity-20 blur-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="relative w-96 h-96 flex items-center justify-center"
+            {/* Orbit Container */}
+            <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+              
+              {/* Outer Orbit Ring - Optimized CSS Animation */}
+              <div 
+                className="absolute w-full h-full rounded-full border border-dark-800/50 animate-spin-slow"
+                style={{ willChange: 'transform' }}
               >
-                <div className="w-80 h-80 rounded-full border-2 border-primary-500/30 flex items-center justify-center">
-                  <span className="text-9xl">👨‍💻</span>
+                {/* Orbiting Icons */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-primary-500/20">
+                  <ReactIcon className="w-full h-full text-cyan-400" />
                 </div>
-              </motion.div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                  <NodeIcon className="w-full h-full text-green-500" />
+                </div>
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-sky-500/20">
+                  <DockerIcon className="w-full h-full text-blue-500" />
+                </div>
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                  <AWSIcon className="w-full h-full text-orange-400" />
+                </div>
+              </div>
+
+              {/* Inner Circle Glow - Reduced Blur for Performance */}
+              <div 
+                className="absolute w-80 h-80 rounded-full bg-gradient-to-br from-primary-600 to-indigo-600 opacity-20 blur-2xl animate-pulse"
+                style={{ willChange: 'opacity' }}
+              ></div>
+              
+              {/* Main Avatar Circle - Optimized CSS Animation */}
+              <div
+                className="relative w-80 h-80 rounded-full border-2 border-dark-700 bg-dark-900/50 backdrop-blur-sm shadow-2xl overflow-hidden flex items-center justify-center group animate-float"
+                style={{ willChange: 'transform' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* 3D Illustration Placeholder */}
+                <span className="text-9xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl filter hover:brightness-110">
+                  👨‍💻
+                </span>
+              </div>
+
             </div>
           </motion.div>
         </div>
