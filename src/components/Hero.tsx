@@ -1,20 +1,29 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { ReactIcon, NodeIcon, DockerIcon, AWSIcon } from './TechIcons'
 
 const Hero = () => {
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setReduceMotion(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    }
+  }, [])
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 12 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
   }
 
   return (
@@ -22,15 +31,13 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center px-4 pt-20 overflow-hidden"
     >
-      {/* Background Elements */}
+      {/* Background Elements - Static for performance */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div 
-          className="absolute top-[-10%] left-[-10%] w-[30rem] h-[30rem] sm:w-[40rem] sm:h-[40rem] bg-primary-500/10 rounded-full blur-[80px] animate-pulse-slow"
-          style={{ willChange: 'transform, opacity' }}
+        <div
+          className="absolute top-[-6%] left-[-6%] w-[20rem] h-[20rem] sm:w-[30rem] sm:h-[30rem] bg-primary-500/10 rounded-full blur-xl"
         />
-        <div 
-          className="absolute bottom-[-10%] right-[-10%] w-[25rem] h-[25rem] sm:w-[35rem] sm:h-[35rem] bg-indigo-500/10 rounded-full blur-[80px] animate-pulse-slow"
-          style={{ willChange: 'transform, opacity', animationDelay: '1s' }}
+        <div
+          className="absolute bottom-[-6%] right-[-6%] w-[18rem] h-[18rem] sm:w-[26rem] sm:h-[26rem] bg-indigo-500/10 rounded-full blur-lg"
         />
       </div>
 
@@ -62,10 +69,11 @@ const Hero = () => {
                 </span>
               </h2>
               <motion.div
-                initial={{ width: "100%" }}
-                animate={{ width: "0%" }}
-                transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+                initial={{ width: reduceMotion ? '0%' : '100%' }}
+                animate={{ width: reduceMotion ? '0%' : '0%' }}
+                transition={{ duration: reduceMotion ? 0 : 1.2, ease: 'easeInOut', delay: 0.5 }}
                 className="absolute inset-0 bg-dark-950 z-20"
+                style={{ willChange: 'width' }}
               />
             </motion.div>
             <motion.p
@@ -125,38 +133,38 @@ const Hero = () => {
 
           {/* Image/Visual Element */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={reduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.5 }}
             className="hidden lg:flex items-center justify-center relative"
           >
             {/* Orbit Container */}
-            <div className="relative w-[500px] h-[500px] flex items-center justify-center">
+              <div className="relative w-[420px] h-[420px] flex items-center justify-center">
               
               {/* Outer Orbit Ring - Optimized CSS Animation */}
-              <div 
-                className="absolute w-full h-full rounded-full border border-dark-800/50 animate-spin-slow"
-                style={{ willChange: 'transform' }}
+              <div
+                className="absolute w-full h-full rounded-full border border-dark-800/50 motion-safe:animate-spin-slow"
+                style={{ willChange: 'transform', transformOrigin: '50% 50%' }}
               >
                 {/* Orbiting Icons */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-primary-500/20">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-primary-500/20" style={{ willChange: 'transform' }}>
                   <ReactIcon className="w-full h-full text-cyan-400" />
                 </div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-purple-500/20" style={{ willChange: 'transform' }}>
                   <NodeIcon className="w-full h-full text-green-500" />
                 </div>
-                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-sky-500/20">
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-sky-500/20" style={{ willChange: 'transform' }}>
                   <DockerIcon className="w-full h-full text-blue-500" />
                 </div>
-                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-orange-500/20" style={{ willChange: 'transform' }}>
                   <AWSIcon className="w-full h-full text-orange-400" />
                 </div>
               </div>
 
               {/* Inner Circle Glow - Reduced Blur for Performance */}
-              <div 
-                className="absolute w-80 h-80 rounded-full bg-gradient-to-br from-primary-600 to-indigo-600 opacity-20 blur-2xl animate-pulse"
-                style={{ willChange: 'opacity' }}
+              <div
+                className="absolute w-72 h-72 rounded-full bg-gradient-to-br from-primary-600 to-indigo-600 opacity-16 blur-xl motion-safe:animate-pulse"
+                style={{ willChange: 'opacity', opacity: 0.18 }}
               ></div>
               
               {/* Main Avatar Circle - Optimized CSS Animation */}

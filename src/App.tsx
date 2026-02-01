@@ -1,10 +1,10 @@
 import { Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Footer from './components/Footer'
-import WhatsAppButton from './components/WhatsAppButton'
 
-// Lazy load heavy sections
+// Lazy load heavy sections and visual components to reduce initial bundle
+const Hero = lazy(() => import('./components/Hero'))
+const Footer = lazy(() => import('./components/Footer'))
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'))
 const About = lazy(() => import('./components/About'))
 const Skills = lazy(() => import('./components/Skills'))
 const Projects = lazy(() => import('./components/Projects'))
@@ -15,16 +15,22 @@ function App() {
     <div className="min-h-screen bg-dark-950">
       <Navbar />
       <main>
-        <Hero />
-        <Suspense fallback={<div className="h-screen flex items-center justify-center text-primary-500">Loading...</div>}>
+        <Suspense fallback={<div className="h-80 flex items-center justify-center text-primary-500">Carregando...</div>}>
+          <Hero />
+        </Suspense>
+
+        <Suspense fallback={<div className="py-20 flex items-center justify-center text-primary-500">Carregando conteúdo...</div>}>
           <About />
           <Skills />
           <Projects />
           <Contact />
         </Suspense>
       </main>
-      <WhatsAppButton />
-      <Footer />
+
+      <Suspense fallback={null}>
+        <WhatsAppButton />
+        <Footer />
+      </Suspense>
     </div>
   )
 }

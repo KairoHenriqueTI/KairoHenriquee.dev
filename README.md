@@ -122,3 +122,21 @@ Este projeto foi criado para uso pessoal de Kairo Henrique.
 ---
 
 Desenvolvido com React, TypeScript e Tailwind CSS
+Desenvolvido com React, TypeScript e Tailwind CSS
+
+## PWA (Progressive Web App)
+
+Este projeto agora inclui configuração básica de PWA usando `vite-plugin-pwa`.
+
+- Manifest: `public/manifest.webmanifest`
+- Service worker: gerado pelo plugin e registrado a partir de `src/main.tsx`
+
+Para instalar as dependências e gerar o build de produção:
+
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+Abra a URL do `preview` (normalmente `http://localhost:5173`) e verifique o DevTools → Application → Manifest / Service Workers para confirmar que o PWA está ativo. Use o Lighthouse para rodar a auditoria PWA.
