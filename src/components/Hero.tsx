@@ -64,7 +64,7 @@ const Hero = () => {
             </motion.h1>
             <motion.div variants={itemVariants} className="relative inline-block">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold relative z-10">
-                <span className="gradient-text bg-[length:200%_auto] animate-shimmer">
+                <span className="gradient-text">
                   Full Stack Developer
                 </span>
               </h2>
@@ -138,44 +138,35 @@ const Hero = () => {
             transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.5 }}
             className="hidden lg:flex items-center justify-center relative"
           >
-            {/* Orbit Container */}
+            {/* Orbit Container - Simplified for performance */}
               <div className="relative w-[420px] h-[420px] flex items-center justify-center">
-              
-              {/* Outer Orbit Ring - Optimized CSS Animation */}
-              <div
-                className="absolute w-full h-full rounded-full border border-dark-800/50 motion-safe:animate-spin-slow"
-                style={{ willChange: 'transform', transformOrigin: '50% 50%' }}
-              >
-                {/* Orbiting Icons */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-primary-500/20" style={{ willChange: 'transform' }}>
+
+              {/* Outer Orbit Ring - Static border, no spin animation */}
+              <div className="absolute w-full h-full rounded-full border border-dark-800/50">
+                {/* Static Icons positioned around orbit */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center">
                   <ReactIcon className="w-full h-full text-cyan-400" />
                 </div>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-purple-500/20" style={{ willChange: 'transform' }}>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center">
                   <NodeIcon className="w-full h-full text-green-500" />
                 </div>
-                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-sky-500/20" style={{ willChange: 'transform' }}>
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center">
                   <DockerIcon className="w-full h-full text-blue-500" />
                 </div>
-                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center shadow-lg shadow-orange-500/20" style={{ willChange: 'transform' }}>
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-dark-900 border border-dark-700 rounded-full p-2 flex items-center justify-center">
                   <AWSIcon className="w-full h-full text-orange-400" />
                 </div>
               </div>
 
-              {/* Inner Circle Glow - Reduced Blur for Performance */}
-              <div
-                className="absolute w-72 h-72 rounded-full bg-gradient-to-br from-primary-600 to-indigo-600 opacity-16 blur-xl motion-safe:animate-pulse"
-                style={{ willChange: 'opacity', opacity: 0.18 }}
-              ></div>
-              
-              {/* Main Avatar Circle - Optimized CSS Animation */}
-              <div
-                className="relative w-80 h-80 rounded-full border-2 border-dark-700 bg-dark-900/50 backdrop-blur-sm shadow-2xl overflow-hidden flex items-center justify-center group animate-float"
-                style={{ willChange: 'transform' }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* 3D Illustration Placeholder */}
-                <span className="text-9xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl filter hover:brightness-110">
+              {/* Inner Circle Glow - Static, no animation */}
+              <div className="absolute w-72 h-72 rounded-full bg-gradient-to-br from-primary-600/15 to-indigo-600/15 blur-lg"></div>
+
+              {/* Main Avatar Circle - No floating animation */}
+              <div className="relative w-80 h-80 rounded-full border-2 border-dark-700 bg-dark-900/80 shadow-2xl overflow-hidden flex items-center justify-center group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                {/* Avatar */}
+                <span className="text-9xl group-hover:scale-105 transition-transform duration-300">
                   👨‍💻
                 </span>
               </div>
@@ -184,8 +175,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        {/* Scroll Indicator - Static */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <div className="flex flex-col items-center gap-2 text-dark-400">
             <span className="text-sm font-mono">Scroll</span>
             <svg
