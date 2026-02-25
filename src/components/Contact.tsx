@@ -29,6 +29,10 @@ const Contact = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-dark-50">
               Vamos trabalhar juntos?
             </h3>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-500/40 bg-primary-500/10 text-primary-300 text-xs sm:text-sm font-medium">
+              <span className="w-2 h-2 rounded-full bg-green-400"></span>
+              Disponível para oportunidades como Desenvolvedor Full Stack
+            </div>
             <p className="text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed">
               Estou sempre aberto a discutir novos projetos, ideias criativas ou
               oportunidades de fazer parte da sua visão. Seja para colaborar em
@@ -132,6 +136,20 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href="https://linkedin.com/in/kairohenrique"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300"
+              >
+                Conectar no LinkedIn
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5h5m0 0v5m0-5L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
 

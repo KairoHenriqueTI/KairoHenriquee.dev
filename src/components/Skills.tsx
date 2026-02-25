@@ -58,8 +58,13 @@ const Skills = () => {
     'Git': <GitIcon className="w-full h-full" />,
     'GitHub': <GitIcon className="w-full h-full" />,
     'AWS': <AWSIcon className="w-full h-full" />,
+    'AWS EC2': <AWSIcon className="w-full h-full" />,
+    'AWS S3': <AWSIcon className="w-full h-full" />,
+    'AWS Route 53': <AWSIcon className="w-full h-full" />,
     'Linux': <LinuxIcon className="w-full h-full" />,
     'Ubuntu': <LinuxIcon className="w-full h-full" />,
+    'Windows Server': <LinuxIcon className="w-full h-full" />,
+    'WHM/cPanel': <LinuxIcon className="w-full h-full" />,
     'VS Code': <VSCodeIcon className="w-full h-full" />,
     'IntelliJ IDEA': <IntelliJIcon className="w-full h-full" />,
     'Postman': <PostmanIcon className="w-full h-full" />,
@@ -127,7 +132,7 @@ const Skills = () => {
           />
         </svg>
       ),
-      skills: ['AWS', 'Docker', 'Linux', 'Ubuntu', 'Git', 'GitHub', 'CI/CD'],
+      skills: ['AWS', 'AWS EC2', 'AWS S3', 'AWS Route 53', 'Docker', 'Git', 'GitHub', 'CI/CD'],
     },
     {
       title: 'Ferramentas',
@@ -141,6 +146,18 @@ const Skills = () => {
         </svg>
       ),
       skills: ['VS Code', 'IntelliJ IDEA', 'Postman', 'Swagger', 'Figma', 'Jira', 'Trello'],
+    },
+    {
+      title: 'Infra & Redes',
+      icon: (
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="7" cy="7" r="1" fill="currentColor" />
+          <circle cx="7" cy="12" r="1" fill="currentColor" />
+          <circle cx="7" cy="17" r="1" fill="currentColor" />
+        </svg>
+      ),
+      skills: ['Linux', 'Ubuntu', 'Windows Server', 'WHM/cPanel', 'DNS', 'DHCP', 'VLANs', 'SSL/TLS'],
     },
     {
       title: 'IA',
@@ -180,6 +197,8 @@ const Skills = () => {
     'from-green-500 to-emerald-500',
     'from-orange-500 to-red-500',
     'from-pink-500 to-rose-500',
+    'from-sky-500 to-indigo-500',
+    'from-fuchsia-500 to-pink-500',
   ]
 
   return (

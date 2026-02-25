@@ -62,10 +62,16 @@ const Hero = () => {
             >
               Kairo Henrique
             </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="text-primary-400 font-mono text-sm md:text-base tracking-wide"
+            >
+              Desenvolvedor Full Stack | SBN Telecomunicações
+            </motion.p>
             <motion.div variants={itemVariants} className="relative inline-block">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold relative z-10">
                 <span className="gradient-text">
-                  Full Stack Developer
+                  Do código ao servidor
                 </span>
               </h2>
               <motion.div
@@ -81,11 +87,12 @@ const Hero = () => {
               className="text-dark-300 text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed"
             >
               <span className="text-2xl font-bold text-dark-50 block mb-2">
-                "Do código ao servidor"
+                "Soluções completas, da aplicação à infraestrutura"
               </span>
-              Especialista em construir soluções completas, unindo{' '}
-              <strong className="text-primary-400">Desenvolvimento de Software</strong>{' '}
-              e <strong className="text-primary-400">Infraestrutura</strong>.
+              Experiência em desenvolvimento e manutenção de sistemas internos e externos,
+              administração de servidores e automação de processos técnicos com foco em
+              <strong className="text-primary-400"> software robusto</strong> e
+              <strong className="text-primary-400"> infraestrutura confiável</strong>.
             </motion.p>
 
             {/* CTA Buttons */}

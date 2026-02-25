@@ -74,10 +74,10 @@ const About = () => {
                 <div className="relative border-l-2 border-dark-800 ml-3 space-y-8 pl-6">
                   <div className="relative">
                      <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary-500 border-4 border-dark-950"></span>
-                     <h4 className="text-dark-50 font-bold">Auxiliar de Programador</h4>
+                     <h4 className="text-dark-50 font-bold">Desenvolvedor Full Stack</h4>
                      <p className="text-primary-400 text-sm">SBN Telecomunicações | Jul 2025 - Presente</p>
                      <p className="text-dark-400 text-sm mt-1">
-                       Desenvolvimento e manutenção de software, automação de processos técnicos e suporte especializado. Promovido de Assistente de Processos Técnicos.
+                       Desenvolvimento e manutenção de software para sistemas e sites internos/externos, administração de servidores e automação de processos técnicos. Promovido de Assistente de Processos Técnicos.
                      </p>
                   </div>
 
@@ -93,7 +93,7 @@ const About = () => {
                      <h4 className="text-dark-50 font-bold">Estágio em TI & Infraestrutura</h4>
                      <p className="text-primary-400 text-sm">Prefeitura de Guabiruba | 2024</p>
                      <p className="text-dark-400 text-sm mt-1">
-                       Suporte técnico, manutenção de redes/infraestrutura e configuração de servidores locais.
+                       Suporte técnico remoto e presencial, manutenção de redes/infraestrutura, configuração de servidores locais e setup de computadores, notebooks, roteadores e impressoras.
                      </p>
                   </div>
 
@@ -116,19 +116,19 @@ const About = () => {
                    <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
                       <h4 className="text-primary-400 font-bold mb-2">Back-end & DevOps</h4>
                       <p className="text-sm text-dark-300">
-                        Java (Spring Boot), PHP (Laravel), Docker, AWS, Linux, Redes.
+                        Java (Spring Boot), PHP (Laravel), Python, Docker, AWS (EC2, S3, Route 53), Linux e Windows Server.
                       </p>
                    </div>
                    <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
                       <h4 className="text-primary-400 font-bold mb-2">Front-end</h4>
                       <p className="text-sm text-dark-300">
-                        React, TypeScript, Tailwind CSS, Blade Templates.
+                        React, Vue.js, TypeScript, JavaScript, Tailwind CSS e Bootstrap.
                       </p>
                    </div>
                    <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
-                      <h4 className="text-primary-400 font-bold mb-2">Metodologias</h4>
+                      <h4 className="text-primary-400 font-bold mb-2">Infraestrutura, Redes & Métodos</h4>
                       <p className="text-sm text-dark-300">
-                        Clean Code, MVC, SOLID, TDD, Scrum/Kanban.
+                        WHM/cPanel, DNS, DHCP, VLANs, SSL/TLS, Clean Code, MVC, SOLID, TDD e Scrum/Kanban.
                       </p>
                    </div>
                 </div>
