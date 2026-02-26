@@ -105,7 +105,7 @@ const Projects = () => {
         { name: 'Blade', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
         { name: 'Docker', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
       ],
-      github: 'https://github.com/Noclipssz/GridFlow--',
+      github: 'https://github.com/KairoHenriqueTI/GridFlow--',
       demo: null,
     },
     {
@@ -119,7 +119,7 @@ const Projects = () => {
         { name: 'HTML5/CSS3', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
         { name: 'LocalStorage', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
       ],
-      github: 'https://github.com/Noclipssz/Controle-de-Finan-as-Pessoais-despesas-receitas-',
+      github: 'https://github.com/KairoHenriqueTI/Controle-de-Finan-as-Pessoais-despesas-receitas-',
       demo: null,
     },
     {
@@ -133,7 +133,7 @@ const Projects = () => {
         { name: 'Docker', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
         { name: 'PostgreSQL', color: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30' },
       ],
-      github: 'https://github.com/Noclipssz/fictional-system-back-end-gym',
+      github: 'https://github.com/KairoHenriqueTI/fictional-system-back-end-gym',
       demo: null,
     },
   ]
@@ -297,7 +297,7 @@ const Projects = () => {
           className="flex justify-center"
         >
           <motion.a
-            href="https://github.com/Noclipssz"
+            href="https://github.com/KairoHenriqueTI"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}

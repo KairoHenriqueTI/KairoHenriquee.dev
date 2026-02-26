@@ -127,7 +127,7 @@ const Contact = () => {
                 <div>
                   <p className="font-semibold text-dark-50 text-sm sm:text-base">GitHub</p>
                   <a
-                    href="https://github.com/Noclipssz"
+                    href="https://github.com/KairoHenriqueTI"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
@@ -140,7 +140,7 @@ const Contact = () => {
 
             <div className="pt-2">
               <a
-                href="https://linkedin.com/in/kairohenrique"
+                href="https://www.linkedin.com/in/kairohenriquedev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300"

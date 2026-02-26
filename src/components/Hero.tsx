@@ -114,7 +114,7 @@ const Hero = () => {
             {/* Social Links */}
             <motion.div variants={itemVariants} className="flex gap-4 pt-4">
               <a
-                href="https://github.com/Noclipssz"
+                href="https://github.com/KairoHenriqueTI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-800 hover:bg-primary-600 text-dark-300 hover:text-white transition-all duration-300 hover:scale-110"
@@ -125,7 +125,7 @@ const Hero = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/kairohenrique"
+                href="https://www.linkedin.com/in/kairohenriquedev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-800 hover:bg-primary-600 text-dark-300 hover:text-white transition-all duration-300 hover:scale-110"
