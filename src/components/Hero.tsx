@@ -41,7 +41,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
@@ -66,7 +66,7 @@ const Hero = () => {
               variants={itemVariants}
               className="text-primary-400 font-mono text-sm md:text-base tracking-wide"
             >
-              Desenvolvedor Full Stack | SBN Telecomunicações
+              Desenvolvedor Full Stack
             </motion.p>
             <motion.div variants={itemVariants} className="relative inline-block">
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold relative z-10">
@@ -108,6 +108,16 @@ const Hero = () => {
                 className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white text-sm sm:text-base font-medium rounded-lg transition-all duration-300"
               >
                 Entrar em Contato
+              </a>
+              <a
+                href="/Kairo_Henrique_CV.pdf"
+                download
+                className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-dark-700 text-dark-300 hover:border-primary-600 hover:text-primary-400 text-sm sm:text-base font-medium rounded-lg transition-all duration-300 flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Baixar CV
               </a>
             </motion.div>
 

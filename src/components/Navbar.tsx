@@ -1,23 +1,30 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const ticking = useRef(false)
+
+  const updateScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50)
+    const totalScroll = document.documentElement.scrollTop
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    setScrollProgress(windowHeight > 0 ? totalScroll / windowHeight : 0)
+    ticking.current = false
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-      
-      const totalScroll = document.documentElement.scrollTop
-      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-      const scroll = `${totalScroll / windowHeight}`
-      setScrollProgress(Number(scroll))
+      if (!ticking.current) {
+        requestAnimationFrame(updateScroll)
+        ticking.current = true
+      }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [updateScroll])
 
   const navLinks = [
     { href: '#home', label: 'Início' },

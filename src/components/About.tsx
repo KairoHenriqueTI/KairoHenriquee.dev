@@ -33,8 +33,7 @@ const About = () => {
             <p>
               Olá! Sou <strong className="text-dark-50">Kairo Henrique</strong>,
               um desenvolvedor Full Stack em formação, apaixonado por criar
-              soluções digitais que fazem a diferença. Atualmente estou cursando
-              o 5º semestre de{' '}
+              soluções digitais que fazem a diferença. Atualmente estou cursando{' '}
               <strong className="text-dark-50">
                 Análise e Desenvolvimento de Sistemas
               </strong>
@@ -74,10 +73,19 @@ const About = () => {
                 <div className="relative border-l-2 border-dark-800 ml-3 space-y-8 pl-6">
                   <div className="relative">
                      <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary-500 border-4 border-dark-950"></span>
-                     <h4 className="text-dark-50 font-bold">Desenvolvedor Full Stack</h4>
-                     <p className="text-primary-400 text-sm">SBN Telecomunicações | Jul 2025 - Presente</p>
+                     <h4 className="text-dark-50 font-bold">Auxiliar de Programador</h4>
+                     <p className="text-primary-400 text-sm">SBN Telecomunicações | Jan 2026 - Presente</p>
                      <p className="text-dark-400 text-sm mt-1">
-                       Desenvolvimento e manutenção de software para sistemas e sites internos/externos, administração de servidores e automação de processos técnicos. Promovido de Assistente de Processos Técnicos.
+                       Desenvolvimento e manutenção de software para sistemas e sites internos/externos. Integração entre desenvolvimento e infraestrutura, garantindo estabilidade e confiabilidade dos sistemas. Promovido de Suporte Técnico.
+                     </p>
+                  </div>
+
+                  <div className="relative">
+                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
+                     <h4 className="text-dark-50 font-bold">Suporte Técnico</h4>
+                     <p className="text-primary-400 text-sm">SBN Telecomunicações | Jul 2025 - Jan 2026</p>
+                     <p className="text-dark-400 text-sm mt-1">
+                       Suporte técnico a hospedagem web e aplicações em produção. Configuração e gerenciamento de DNS, domínios e serviços de rede. Administração de servidores via WHM/cPanel e deploy de aplicações Laravel.
                      </p>
                   </div>
 
@@ -91,20 +99,12 @@ const About = () => {
                   <div className="relative">
                      <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
                      <h4 className="text-dark-50 font-bold">Estágio em TI & Infraestrutura</h4>
-                     <p className="text-primary-400 text-sm">Prefeitura de Guabiruba | 2024</p>
+                     <p className="text-primary-400 text-sm">Prefeitura de Guabiruba | Ago 2024 - Nov 2024</p>
                      <p className="text-dark-400 text-sm mt-1">
                        Suporte técnico remoto e presencial, manutenção de redes/infraestrutura, configuração de servidores locais e setup de computadores, notebooks, roteadores e impressoras.
                      </p>
                   </div>
 
-                  <div className="relative">
-                     <span className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-dark-700 border-4 border-dark-950"></span>
-                     <h4 className="text-dark-50 font-bold">Desenvolvedor Web (Estudos)</h4>
-                     <p className="text-primary-400 text-sm">Udemy & Autodidata | 2023 - 2026</p>
-                     <p className="text-dark-400 text-sm mt-1">
-                       +300h em cursos de Java, Banco de Dados (MySQL) e Full Stack (JS/TS).
-                     </p>
-                  </div>
                 </div>
               </div>
 
@@ -126,9 +126,9 @@ const About = () => {
                       </p>
                    </div>
                    <div className="bg-dark-800/50 p-4 rounded-lg border border-dark-800 hover:border-primary-500/30 transition-colors">
-                      <h4 className="text-primary-400 font-bold mb-2">Infraestrutura, Redes & Métodos</h4>
+                      <h4 className="text-primary-400 font-bold mb-2">Infraestrutura & Redes</h4>
                       <p className="text-sm text-dark-300">
-                        WHM/cPanel, DNS, DHCP, VLANs, SSL/TLS, Clean Code, MVC, SOLID, TDD e Scrum/Kanban.
+                        WHM/cPanel, DNS, DHCP, VLANs e SSL/TLS.
                       </p>
                    </div>
                 </div>

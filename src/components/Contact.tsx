@@ -31,7 +31,7 @@ const Contact = () => {
             </h3>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary-500/40 bg-primary-500/10 text-primary-300 text-xs sm:text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-400"></span>
-              Disponível para oportunidades como Desenvolvedor Full Stack
+              Disponível para oportunidades em Desenvolvimento Full Stack e Infraestrutura Cloud
             </div>
             <p className="text-dark-300 text-sm sm:text-base md:text-lg leading-relaxed">
               Estou sempre aberto a discutir novos projetos, ideias criativas ou
@@ -132,7 +132,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-xs sm:text-sm hover:text-primary-400 transition-colors"
                   >
-                    @Noclipssz
+                    @KairoHenriqueTI
                   </a>
                 </div>
               </div>

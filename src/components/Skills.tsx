@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import {
   ReactIcon,
   VueIcon,
@@ -8,41 +7,24 @@ import {
   JavaIcon,
   PythonIcon,
   PHPIcon,
-  NodeIcon,
   DockerIcon,
   MySQLIcon,
   TailwindIcon,
   GitIcon,
   AWSIcon,
-  HTML5Icon,
-  CSS3Icon,
   BootstrapIcon,
   LinuxIcon,
-  FigmaIcon,
-  VSCodeIcon,
   PostmanIcon,
   SwaggerIcon,
-  IntelliJIcon,
-  JiraIcon,
-  TrelloIcon,
-  CICDIcon,
-  ChatGPTIcon,
-  OpenAIIcon,
-  AnthropicIcon,
-  MCPIcon
-  , CodexIcon, ClaudeIcon, CodeIcon, ManusIcon
 } from './TechIcons'
 
 const Skills = () => {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   const skillIcons: Record<string, JSX.Element> = {
     'React': <ReactIcon className="w-full h-full" />,
     'Vue.js': <VueIcon className="w-full h-full" />,
     'JavaScript': <JavaScriptIcon className="w-full h-full" />,
     'TypeScript': <TypeScriptIcon className="w-full h-full" />,
-    'HTML5': <HTML5Icon className="w-full h-full" />,
-    'CSS3': <CSS3Icon className="w-full h-full" />,
     'Tailwind CSS': <TailwindIcon className="w-full h-full" />,
     'Bootstrap': <BootstrapIcon className="w-full h-full" />,
     'Java': <JavaIcon className="w-full h-full" />,
@@ -50,11 +32,8 @@ const Skills = () => {
     'Python': <PythonIcon className="w-full h-full" />,
     'PHP': <PHPIcon className="w-full h-full" />,
     'Laravel': <PHPIcon className="w-full h-full" />,
-    'Node.js': <NodeIcon className="w-full h-full" />,
     'Docker': <DockerIcon className="w-full h-full" />,
     'MySQL': <MySQLIcon className="w-full h-full" />,
-    'PostgreSQL': <MySQLIcon className="w-full h-full" />,
-    'MongoDB': <MySQLIcon className="w-full h-full" />,
     'Git': <GitIcon className="w-full h-full" />,
     'GitHub': <GitIcon className="w-full h-full" />,
     'AWS': <AWSIcon className="w-full h-full" />,
@@ -62,28 +41,10 @@ const Skills = () => {
     'AWS S3': <AWSIcon className="w-full h-full" />,
     'AWS Route 53': <AWSIcon className="w-full h-full" />,
     'Linux': <LinuxIcon className="w-full h-full" />,
-    'Ubuntu': <LinuxIcon className="w-full h-full" />,
     'Windows Server': <LinuxIcon className="w-full h-full" />,
     'WHM/cPanel': <LinuxIcon className="w-full h-full" />,
-    'VS Code': <VSCodeIcon className="w-full h-full" />,
-    'IntelliJ IDEA': <IntelliJIcon className="w-full h-full" />,
     'Postman': <PostmanIcon className="w-full h-full" />,
     'Swagger': <SwaggerIcon className="w-full h-full" />,
-    'Figma': <FigmaIcon className="w-full h-full" />,
-    'Jira': <JiraIcon className="w-full h-full" />,
-    'Trello': <TrelloIcon className="w-full h-full" />,
-    'CI/CD': <CICDIcon className="w-full h-full" />,
-    'ChatGPT': <ChatGPTIcon className="w-full h-full" />,
-    'GPT-4': <ChatGPTIcon className="w-full h-full" />,
-    'OpenAI': <OpenAIIcon className="w-full h-full" />,
-    'Anthropic': <AnthropicIcon className="w-full h-full" />,
-    'MCP': <MCPIcon className="w-full h-full" />,
-    'Codex': <CodexIcon className="w-full h-full" />,
-    'Claude': <ClaudeIcon className="w-full h-full" />,
-    'Claude Code': <CodeIcon className="w-full h-full" />,
-    'Code': <CodeIcon className="w-full h-full" />,
-    'Manus': <ManusIcon className="w-full h-full" />,
-    'Codex CLI': <CodexIcon className="w-full h-full" />,
   }
 
   const skillCategories = [
@@ -95,7 +56,7 @@ const Skills = () => {
           <path d="M8 21h8M12 17v4" strokeWidth="2" />
         </svg>
       ),
-      skills: ['React', 'Vue.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'],
+      skills: ['React', 'Vue.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Bootstrap'],
     },
     {
       title: 'Backend',
@@ -107,7 +68,7 @@ const Skills = () => {
           <line x1="6" y1="18" x2="6.01" y2="18" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
-      skills: ['Java', 'Spring Boot', 'Python', 'PHP', 'Laravel', 'Node.js'],
+      skills: ['Java', 'Spring Boot', 'Python', 'PHP', 'Laravel'],
     },
     {
       title: 'Database',
@@ -132,7 +93,7 @@ const Skills = () => {
           />
         </svg>
       ),
-      skills: ['AWS', 'AWS EC2', 'AWS S3', 'AWS Route 53', 'Docker', 'Git', 'GitHub', 'CI/CD'],
+      skills: ['AWS', 'AWS EC2', 'AWS S3', 'AWS Route 53', 'Docker'],
     },
     {
       title: 'Ferramentas',
@@ -145,7 +106,7 @@ const Skills = () => {
           />
         </svg>
       ),
-      skills: ['VS Code', 'IntelliJ IDEA', 'Postman', 'Swagger', 'Figma', 'Jira', 'Trello'],
+      skills: ['Git', 'GitHub', 'Postman', 'Swagger'],
     },
     {
       title: 'Infra & Redes',
@@ -157,16 +118,7 @@ const Skills = () => {
           <circle cx="7" cy="17" r="1" fill="currentColor" />
         </svg>
       ),
-      skills: ['Linux', 'Ubuntu', 'Windows Server', 'WHM/cPanel', 'DNS', 'DHCP', 'VLANs', 'SSL/TLS'],
-    },
-    {
-      title: 'IA',
-      icon: (
-        <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2a7 7 0 00-7 7v3a7 7 0 0014 0V9a7 7 0 00-7-7zm1 14h-2v2h2v-2zm1-7h-4V7h4v2z" />
-        </svg>
-      ),
-      skills: ['Manus', 'Claude Code', 'Codex CLI', 'MCP'],
+      skills: ['Linux', 'Windows Server', 'WHM/cPanel', 'DNS', 'DHCP', 'VLANs', 'SSL/TLS'],
     },
   ]
 
@@ -198,7 +150,6 @@ const Skills = () => {
     'from-orange-500 to-red-500',
     'from-pink-500 to-rose-500',
     'from-sky-500 to-indigo-500',
-    'from-fuchsia-500 to-pink-500',
   ]
 
   return (
@@ -260,52 +211,27 @@ const Skills = () => {
                   <motion.div
                     key={skillIndex}
                     variants={cardVariants}
-                    onHoverStart={() => setHoveredSkill(skill)}
-                    onHoverEnd={() => setHoveredSkill(null)}
                     whileHover={{ scale: 1.05, y: -8 }}
-                    className="relative bg-dark-900 border border-dark-800 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-[110px] sm:min-h-[130px]"
+                    className="relative bg-dark-900 border border-dark-800 hover:border-primary-500 rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 overflow-hidden group cursor-pointer flex flex-col items-center justify-center gap-3 sm:gap-4 min-h-[110px] sm:min-h-[130px] transition-colors duration-300"
                   >
-                    {/* Gradient background on hover */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{
-                        opacity: hoveredSkill === skill ? 0.15 : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className={`absolute inset-0 bg-gradient-to-br ${skillColors[categoryIndex]}`}
-                    />
-
-                    {/* Border glow */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{
-                        opacity: hoveredSkill === skill ? 1 : 0,
-                      }}
-                      className="absolute inset-0 border-2 border-primary-500 rounded-xl"
+                    {/* Gradient background on hover - CSS only */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${skillColors[categoryIndex]} opacity-0 group-hover:opacity-15 transition-opacity duration-300`}
                     />
 
                     {/* Icon */}
                     {skillIcons[skill] && (
-                      <motion.div
-                        animate={{
-                          rotate: hoveredSkill === skill ? [0, -10, 10, 0] : 0,
-                          scale: hoveredSkill === skill ? 1.2 : 1,
-                        }}
-                        transition={{ duration: 0.5 }}
-                        className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center text-primary-400 group-hover:text-primary-300"
-                      >
+                      <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center text-primary-400 group-hover:text-primary-300 group-hover:scale-110 transition-transform duration-300">
                         <div className="w-full h-full">
                           {skillIcons[skill]}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
 
                     {/* Skill Name */}
-                    <motion.p
-                      className="relative z-10 text-xs sm:text-sm font-semibold text-dark-50 text-center group-hover:text-white transition-colors"
-                    >
+                    <p className="relative z-10 text-xs sm:text-sm font-semibold text-dark-50 text-center group-hover:text-white transition-colors duration-300">
                       {skill}
-                    </motion.p>
+                    </p>
                   </motion.div>
                 ))}
               </motion.div>
