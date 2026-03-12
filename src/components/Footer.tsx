@@ -98,10 +98,15 @@ const Footer = () => {
               &copy; {currentYear} Kairo Henrique. Todos os direitos reservados.
             </p>
             <p>
-              Desenvolvido com{' '}
-              <span className="text-primary-500">React</span>,{' '}
-              <span className="text-primary-500">TypeScript</span> e{' '}
-              <span className="text-primary-500">Tailwind CSS</span>
+              Desenvolvido por{' '}
+              <a
+                href="https://kairohenrique.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-400 transition-colors"
+              >
+                Kairo Henrique
+              </a>
             </p>
           </div>
         </div>
