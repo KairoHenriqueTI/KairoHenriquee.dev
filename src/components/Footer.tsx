@@ -48,7 +48,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-dark-400 text-xs sm:text-sm">
-              Full Stack Developer em formação.
+              Full Stack Developer.
               <br />
               Do código ao servidor.
             </p>
